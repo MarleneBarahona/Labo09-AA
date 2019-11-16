@@ -78,6 +78,21 @@ struct node* deleteNode(struct node* root, int key){
     }
     return root;
 }
+struct node * padre(struct node* node, int x, int y){
+    if(node == NULL){
+        return NULL;
+    }
+    if(x < node->key && y < node->key){
+       return padre(node->left,x,y);
+    }
+    else if(x > node->key && y > node->key){
+       return padre(node->right,x,y);
+    }
+    else {
+        return node;
+    }
+}
+
 // Driver Program to test above functions
 int main(){
 /* Let us create following BST
@@ -96,5 +111,7 @@ int main(){
     root = insert(root, 80);
     printf("Inorder traversal of the given tree \n");
     inorder(root);
+    printf("Ancestro: %d",padre(root,20,60)->key);
+
     return 0;
 }
