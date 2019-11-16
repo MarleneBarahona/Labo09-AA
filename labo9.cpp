@@ -111,7 +111,9 @@ int main(){
     root = insert(root, 80);
     printf("Inorder traversal of the given tree \n");
     inorder(root);
-    printf("Ancestro: %d",padre(root,20,60)->key);
-
+    //printf("Ancestro: %d",padre(root,20,60)->key);
+    printf("\n");
+    printf("%d es ancestro de %d y %d", padre(root, 20, 60)->key,20,60);
+    
     return 0;
 }
